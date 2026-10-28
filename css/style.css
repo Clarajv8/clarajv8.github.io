@@ -132,6 +132,11 @@ body {
     pointer-events: none;
     transform: translateY(15px);
     transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.25, 1, 0.4, 1);
+    max-height: 85vh; 
+    overflow-y: auto; 
+    padding-right: 15px;
+    scrollbar-width: thin; 
+    scrollbar-color: #EAEAEA transparent;
 }
 
 .content-block.active {
@@ -160,7 +165,6 @@ body {
     gap: 4rem; 
     align-items: start; 
     width: 100%;
-    margin-top: 8vh;
 }
 
 .about-text-content {
@@ -216,7 +220,6 @@ body {
     filter: grayscale(0%); 
 }
 
-
 /* === BURBUJAS 4.0 === */
 .interactive-skills {
     display: flex;
@@ -227,15 +230,22 @@ body {
 
 .skill-bubble {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
     border: 1px solid #c9c9c9;
     border-radius: 20px; 
     padding: 0.6rem 1.2rem;
     background-color: rgba(253, 253, 251, 0.2);
-    cursor: default;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.4, 1);
+    cursor: help;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
+    position: relative;
+}
+
+.skill-bubble:focus-visible {
+    border-color: #2D2D2D;
+    box-shadow: 0 0 0 3px rgba(0,255,255,0.15);
 }
 
 .skill-title {
@@ -247,35 +257,62 @@ body {
 }
 
 .skill-details {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+    background-color: rgba(253, 253, 251, 0.98);
+    border: 1px solid #2D2D2D;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     font-size: 0.8rem;
-    color: #888;
-    max-height: 0; 
-    opacity: 0;
-    overflow: hidden;
+    color: #555;
     line-height: 1.5;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.4, 1);
-    margin-top: 0;
     white-space: normal;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
 }
 
-.skill-bubble:hover {
-    border-color: #2D2D2D;
-    background-color: rgba(253, 253, 251, 0.65);
-    box-shadow: -2px 4px 12px rgba(0, 255, 255, 0.08), 2px 4px 12px rgba(255, 0, 128, 0.08);
+@media (hover: hover) and (pointer: fine) {
+    .skill-bubble:hover {
+        border-color: #2D2D2D;
+        background-color: rgba(253, 253, 251, 0.65);
+        box-shadow: -2px 4px 12px rgba(0, 255, 255, 0.08), 2px 4px 12px rgba(255, 0, 128, 0.08);
+    }
+    .skill-bubble:hover .skill-details {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.skill-bubble:hover .skill-details {
-    max-height: 150px; 
+.skill-bubble:focus-within .skill-details,
+.skill-bubble:focus .skill-details {
     opacity: 1;
-    margin-top: 0.5rem; 
+    transform: translateY(0);
 }
-
 
 /* === PROYECTOS === */
 .projects-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+}
+
+@media (max-width: 999px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 499px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -440,62 +477,57 @@ body {
     filter: drop-shadow(2px 0px 2px rgba(255, 0, 128, 0.3)) drop-shadow(-2px 0px 2px rgba(0, 255, 255, 0.3));
 }
 
-/* === PROYECTOS: CROSS-FADE === */
+/* === PROYECTOS: CROSS-FADE con position swap (sin huecos) === */
 #works-content {
-    display: block; 
-    width: 100%;
+    display: block;
     position: relative;
-}
-
-.projects-overview, .project-details-wrapper {
-    grid-area: 1 / 1; 
     width: 100%;
+    /* Sin transition propia: hereda la de .content-block (opacity + transform) */
 }
 
 .projects-overview {
-    width: 100%;
     position: relative;
+    width: 100%;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     z-index: 2;
-    transition: opacity 0.4s ease 0.4s, transform 0.6s cubic-bezier(0.25, 1, 0.4, 1) 0.4s, visibility 0s 0.4s;
+    transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.25, 1, 0.4, 1), visibility 0s 0s;
+}
+
+.project-details-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+    z-index: 1;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.4s ease, visibility 0s 0.3s;
 }
 
 #portfolio-container.case-study-active .projects-overview {
-    position: absolute; 
-    top: 0; left: 0;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transform: translateY(-20px);
-    z-index: 1;
     transition: opacity 0.3s ease, transform 0.4s ease, visibility 0s 0.3s;
 }
 
 #portfolio-container.case-study-active .project-details-wrapper {
     position: relative;
+    inset: auto;
+    overflow: visible;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
-    z-index: 2; 
-    transition: opacity 0.4s ease 0.3s, transform 0.6s cubic-bezier(0.25, 1, 0.4, 1) 0.3s, visibility 0s 0s; 
-}
-
-/* === PANEL DE DETALLE Y COLUMNAS === */
-.project-details-wrapper {
-    width: 100%;
-    position: absolute; 
-    top: 0; left: 0;
-    display: grid;
-    align-items: start;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(20px);
-    z-index: 1; 
-    transition: opacity 0.3s ease, transform 0.4s ease, visibility 0s 0.3s;
+    transition: opacity 0.4s ease 0.3s, transform 0.6s cubic-bezier(0.25, 1, 0.4, 1) 0.3s, visibility 0s 0s;
 }
 
 .case-sidebar { 
@@ -566,7 +598,7 @@ body {
 #portfolio-container.case-study-active .content-area {
     left: 10%; 
     width: 80%;
-    top: 15vh;
+    top: 18vh;
     transform: translateY(0); 
 }
 
@@ -575,7 +607,7 @@ body {
 .project-sub-menu {
     position: absolute;
     left: 50%;
-    top: 13vh; 
+    top: 11vh;
     transform: translate(-50%, -15px); 
     display: flex;
     gap: 3.5rem; 
@@ -640,17 +672,10 @@ body {
     transform: translateX(0);
 }
 
-/* === ESPACIADOS MEJORADOS === */
-#portfolio-container.case-study-active .content-area {
-    left: 10%; 
-    width: 80%;
-    top: 24vh; 
-    transform: translateY(0); 
-}
-
 /* === PROYECTOS: TRANSICIÓN FLUIDA Y CORRECTA === */
 .project-case-study {
-    grid-area: 1 / 1; 
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -662,16 +687,14 @@ body {
     visibility: hidden;
     pointer-events: none;
     transform: translateY(15px);
-    max-height: 70vh; 
-    overflow-y: auto; 
-    padding-right: 1.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: #EAEAEA transparent;
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;
     z-index: 1;
+    overflow-y: auto;
 }
 
 .project-case-study.active-case {
+    position: relative;
+    inset: auto;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -938,18 +961,57 @@ body {
     transform: scale(1);
 }
 
-/* =========================================================
-   📱 RESPONSIVE DESIGN TOTALMENTE BLINDADO (SIN LAG NI DESBORDAMIENTOS)
-   ========================================================= */
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin-bottom: 2.5rem;
+    background-color: #000;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+}
+
+.editorial-quote {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #2D2D2D;
+    border-left: 5px solid #2D2D2D; 
+    padding-left: 2rem;
+    margin: 4rem 0;
+    letter-spacing: -1px;
+}
+.editorial-columns {
+    column-count: 2;
+    column-gap: 4rem;
+    margin-bottom: 3rem;
+}
+.editorial-columns p {
+    margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+    .editorial-columns { column-count: 1; }
+    .editorial-quote { font-size: 1.5rem; padding-left: 1.2rem; }
+}
+
+
+
 @media (max-width: 768px) {
     html, body {
         height: 100% !important;
         width: 100vw !important;
         overflow-x: hidden !important; 
         overflow-y: hidden !important;
-        position: fixed;
     }
-
     #portfolio-container {
         width: 100%;
         height: 100%;
@@ -957,14 +1019,12 @@ body {
         overflow-y: hidden;
         position: relative;
     }
-
     .main-menu {
         width: 100% !important;
         left: 0 !important;
         transform: none !important;
         align-items: center !important;
     }
-
     #portfolio-container.layout-split .main-menu,
     #portfolio-container.case-study-active .main-menu {
         left: 0 !important; 
@@ -975,13 +1035,11 @@ body {
         gap: 1.5rem !important;
         width: 100% !important;
     }
-
     .soft-glitch-link {
         font-size: 1.1rem !important; 
         letter-spacing: 0 !important;
         text-align: center !important;
     }
-
     #portfolio-container.case-study-active .project-sub-menu {
         left: 0 !important;
         top: 5.5rem !important; 
@@ -993,12 +1051,15 @@ body {
         gap: 1.2rem !important;
         padding: 0 1rem; 
     }
-
     .sub-link {
-        font-size: 0.85rem !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 1px !important;
         padding: 0 0.2rem !important;
     }
-
+    #portfolio-container.case-study-active .project-sub-menu {
+        gap: 0.8rem !important;
+        padding: 0 0.5rem;
+    }
     .content-area {
         left: 5% !important;
         width: 90% !important; 
@@ -1006,62 +1067,44 @@ body {
         transform: none !important;
         height: calc(100% - 20vh) !important; 
     }
-
     #portfolio-container.case-study-active .content-area {
         left: 5% !important;
         width: 90% !important;
-        top: 9.5rem !important; 
+        top: 11rem !important; 
         transform: none !important;
-        height: calc(100% - 11rem) !important; 
+        height: calc(100% - 12.5rem) !important; 
     }
-
     .content-block {
         max-height: 100%; 
         overflow-y: auto;
         padding-bottom: 4rem; 
         scrollbar-width: none; 
     }
-
     .about-grid {
         grid-template-columns: 1fr; 
         gap: 2.5rem;
         margin-top: 1rem;
     }
-
     .image-frame {
         max-width: 200px;
         margin: 0 auto; 
     }
-
-    /* 🌟 INVERTIR EL EFECTO DE COLOR EN PANTALLAS TÁCTILES */
     .profile-photo {
         filter: grayscale(0%) !important; 
     }
-
     .image-frame:active .profile-photo {
         filter: grayscale(100%) !important; 
     }
-    
     .image-frame:active {
         transform: scale(0.97);
     }
-
-    .projects-grid {
-        flex-direction: column;
-        gap: 2.5rem;
-        padding-bottom: 5rem;
-    }
-
     .project-case-study {
-        max-height: 100% !important;
         padding-right: 0.2rem;
     }
-
     .case-header-block h3 {
         font-size: 1.8rem;
         line-height: 1.2;
     }
-
     .case-intro-row, 
     .zig-zag-row, 
     .zig-zag-row.reverse {
@@ -1069,37 +1112,72 @@ body {
         gap: 1.5rem;
         margin-bottom: 3.5rem;
     }
-
     .case-intro-row .case-main-img, 
     .zig-zag-img {
         max-width: 100%;
         width: 100%;
     }
-
     .interactive-gallery {
         max-width: 100%;
     }
-
     .gallery-stack {
         gap: 0.4rem; 
     }
-
     .stacked-card {
         width: 58px; 
         height: 58px;
         border-width: 1px; 
     }
-
-    .stacked-card:hover {
-        transform: translateY(-6px) scale(1.15) rotate(0deg) !important;
-    }
-
     .iframe-window {
         aspect-ratio: 4/3; 
     }
-
     .iframe-window.mobile-frame {
         max-width: 240px;
         aspect-ratio: 9/19;
+    }
+}
+
+@media (min-width: 769px) {
+    #portfolio-container.case-study-active .content-block {
+        max-height: 74vh;
+        align-self: start;
+    }
+}
+
+/* === FIX HOVER STICKY EN TÁCTIL === */
+@media (hover: none) {
+    .stacked-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+    .image-frame:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .image-frame:hover .profile-photo {
+        filter: grayscale(100%);
+    }
+    .project-card:hover {
+        transform: none;
+    }
+    .project-card:hover .project-image-placeholder.vertical-img {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    .project-card:hover h3 {
+        text-shadow: none;
+    }
+    .contact-item:hover .value {
+        transform: none;
+        text-shadow: none;
+    }
+    .contact-item:hover svg {
+        transform: none;
+        filter: none;
+    }
+    .external-link-btn:hover {
+        background-color: transparent;
+        color: #2D2D2D;
+        transform: none;
+        box-shadow: none;
     }
 }
