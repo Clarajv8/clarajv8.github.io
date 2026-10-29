@@ -1003,6 +1003,227 @@ body {
     .editorial-quote { font-size: 1.5rem; padding-left: 1.2rem; }
 }
 
+.featured-essay {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F0 100%);
+    border: 1px solid #EAEAEA;
+    border-left: 3px solid #00FFFF;
+    border-radius: 8px;
+    position: relative;
+}
+
+.featured-essay-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #A3A3A3;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.featured-essay-eyebrow::before {
+    content: '§';
+    color: #00FFFF;
+    font-size: 1rem;
+}
+
+.featured-essay-title {
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    color: #2D2D2D;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.featured-essay-quote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #4A4A4A;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.featured-essay-desc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    max-width: 650px;
+}
+
+.featured-essay-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    background: transparent;
+    border: 1px solid #2D2D2D;
+    padding: 0.7rem 1.4rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.featured-essay-btn:hover {
+    background-color: #2D2D2D;
+    color: #FDFDFB;
+    transform: translateY(-2px);
+}
+
+.case-subsection-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0 3rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #A3A3A3;
+    font-weight: 600;
+    width: 100%;
+}
+
+.case-subsection-label::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: #00FFFF;
+    flex-shrink: 0;
+}
+
+.case-subsection-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #EAEAEA;
+}
+
+.pdf-dossier-section {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.pdf-dossier-section h4 {
+    font-size: 1.8rem;
+    color: #2D2D2D;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.pdf-dossier-section p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.pdf-dossier-frame {
+    width: 100%;
+    max-width: 900px;
+    height: 450px; 
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FAFAFA;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    margin-bottom: 1.5rem;
+}
+
+.pdf-dossier-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.live-preview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.live-preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.live-preview-item .iframe-window {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px; 
+    aspect-ratio: auto;
+}
+
+.live-preview-item h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .live-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+.sub-link-essay {
+    position: relative;
+}
+
+.sub-link-essay::after {
+    content: none; 
+}
+
+.sub-link-essay::before {
+    content: none;
+}
+
+.sub-link-essay {
+    padding-left: 1.2rem !important;
+    border-left: 1px solid #EAEAEA;
+    margin-left: 0.5rem;
+}
+
+.sub-link-essay:hover,
+.sub-link-essay.active-sub {
+    color: #00FFFF;
+}
+
+@media (max-width: 768px) {
+    .featured-essay {
+        padding: 2rem 1.5rem;
+    }
+    .featured-essay-title {
+        font-size: 1.3rem;
+    }
+    .featured-essay-quote {
+        font-size: 0.95rem;
+    }
+}
+
+
+
 
 
 @media (max-width: 768px) {

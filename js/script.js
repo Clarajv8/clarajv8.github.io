@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetCase) {
             targetCase.classList.add('active-case');
             targetCase.scrollTop = 0;
+            // Reset también del contenedor scrollable padre
+            const contentBlock = targetCase.closest('.content-block');
+            if (contentBlock) contentBlock.scrollTop = 0;
         }
         container.classList.add('case-study-active');
     };

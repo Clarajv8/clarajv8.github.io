@@ -64,7 +64,7 @@
                 <div class="projects-overview">
                     <h2>Proyectos destacados</h2>
                     <div class="projects-grid">
-                        <!-- 1. Identidad & Encargos (incluye Stephen King + Vidal) -->
+                        <!-- 1. Identidad & Encargos -->
                         <div class="project-card" onclick="toggleProjectDetail('identity')">
                             <div class="project-image-placeholder vertical-img">
                                 <img src="assets/identity-main.webp" alt="Identidad & Encargos" class="card-img">
@@ -88,7 +88,7 @@
                             <h3>Bakeneko Bakery</h3>
                             <p>Web Development</p>
                         </div>
-                        <!-- 4. Web & Editorial (CBA + Diegéstica) -->
+                        <!-- 4. Web & Editorial (Diegéstica + CBA) -->
                         <div class="project-card" onclick="toggleProjectDetail('webeditorial')">
                             <div class="project-image-placeholder vertical-img">
                                 <img src="assets/cba-main.webp" alt="Web & Editorial" class="card-img">
@@ -96,7 +96,7 @@
                             <h3>Web & Editorial</h3>
                             <p>Maquetación CSS • Diseño Editorial</p>
                         </div>
-                        <!-- 5. Motion & 3D (Corte Inglés + Steam Machine + Lyric Video) -->
+                        <!-- 5. Motion & 3D -->
                         <div class="project-card" onclick="toggleProjectDetail('multimedia')">
                             <div class="project-image-placeholder vertical-img">
                                 <img src="assets/dracula-cover.webp" alt="Motion & 3D" class="card-img">
@@ -104,23 +104,7 @@
                             <h3>Motion & 3D</h3>
                             <p>After Effects • Cinema 4D • Dirección de Arte</p>
                         </div>
-                        <!-- 6. Research (Semántica) -->
-                        <div class="project-card" onclick="toggleProjectDetail('semantics')">
-                            <div class="project-image-placeholder vertical-img">
-                                <img src="assets/semantics.webp" alt="UX Strategy: Semántica" class="card-img">
-                            </div>
-                            <h3>UX Strategy: Semántica</h3>
-                            <p>Investigación & E-commerce</p>
-                        </div>
-                        <!-- 7. Branding & Rebranding (Ryanair) -->
-                        <div class="project-card" onclick="toggleProjectDetail('branding')">
-                            <div class="project-image-placeholder vertical-img">
-                                <img src="assets/ryanair-main.webp" alt="Branding Ryanair" class="card-img">
-                            </div>
-                            <h3>Branding & Rebranding</h3>
-                            <p>Ryanair • Identidad Visual</p>
-                        </div>
-                        <!-- 8. UX/UI Mobile (Tarantino) -->
+                        <!-- 6. UX/UI Mobile (Tarantino) -->
                         <div class="project-card" onclick="toggleProjectDetail('mobile')">
                             <div class="project-image-placeholder vertical-img">
                                 <img src="assets/tarantino-main.webp" alt="UX/UI Mobile Tarantino" class="card-img">
@@ -129,10 +113,22 @@
                             <p>Exposición Tarantino • IFEMA</p>
                         </div>
                     </div>
+
+                    <!-- Ensayo destacado (Semántica) -->
+                    <div class="featured-essay">
+                        <div class="featured-essay-eyebrow">Ensayo destacado</div>
+                        <h3 class="featured-essay-title">La Semántica Cognitiva en el E-commerce</h3>
+                        <p class="featured-essay-quote">"El merchandising del futuro no venderá cosas. Venderá entendimiento."</p>
+                        <p class="featured-essay-desc">Una investigación académica sobre cómo la IA generativa transformará el e-commerce en ecosistemas empáticos y conversacionales. Del e-commerce transaccional al consumo como relación humana.</p>
+                        <button class="featured-essay-btn" onclick="toggleProjectDetail('semantics')">
+                            Leer ensayo completo →
+                        </button>
+                    </div>
                 </div>
 
                 <div id="project-details-container" class="project-details-wrapper">
                     
+                    <!-- ============ ELYSIUM ============ -->
                     <div id="detail-elysium" class="project-case-study">
                         <div class="case-header-block">
                             <h3>Elysium Scapes</h3>
@@ -167,16 +163,15 @@
                             <p>Interactúa con la interfaz real y experimenta las transiciones directamente desde Figma:</p>
                             <div class="iframe-window mobile-frame">
                                 <div class="mobile-notch"></div>
-                                
                                 <iframe src="https://embed.figma.com/proto/cRYtWtu55kdnKOoiLWINfh/Untitled?node-id=430-3633&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=430%3A3633&embed-host=share&hide-ui=1&scaling=scale-down-width" allowfullscreen title="Elysium Scapes Figma Prototype" loading="lazy"></iframe>
                             </div>
-
                             <a href="https://www.figma.com/proto/cRYtWtu55kdnKOoiLWINfh/Untitled?node-id=430-3633&p=f&t=HijyIXl6uMkuyVZU-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=430%3A3633" target="_blank" class="external-link-btn">
                                 Ver prototipo completo en Figma ↗
                             </a>
                         </div>
                     </div>
 
+                    <!-- ============ BAKENEKO ============ -->
                     <div id="detail-bakeneko" class="project-case-study">
                         <div class="case-header-block">
                             <h3>Bakeneko Bakery</h3>
@@ -187,14 +182,14 @@
                                 <img src="assets/bakeneko.webp" alt="Bakeneko Bakery" class="card-img">
                             </div>
                             <div class="case-intro-text">
-                                <p class="intro-text"><strong>El Reto:</strong> El reto era tan delicado como los propios Wagashi: diseñar una experiencia de e-commerce que no se sintiera como una compra, sino como la entrada a una ceremonia. Quería fusionar tres mundos que me fascinan; las criaturas del folclore japonés (Yokai), la repostería artesanal (Wagashi) y el ritual del maridaje con cafés y vinos de especialidad. El objetivo es crear el espacio digital de una marca de lujo silencioso, pensada para el antojo ocasional, no para la cesta diaria. </p>
+                                <p class="intro-text"><strong>El Reto:</strong> El reto era tan delicado como los propios Wagashi: diseñar una experiencia de e-commerce que no se sintiera como una compra, sino como la entrada a una ceremonia. Quería fusionar tres mundos que me fascinan; las criaturas del folclore japonés (Yokai), la repostería artesanal (Wagashi) y el ritual del maridaje con cafés y vinos de especialidad. El objetivo es crear el espacio digital de una marca de lujo silencioso, pensada para el antojo ocasional, no para la cesta diaria.</p>
                             </div>
                         </div>
                         <div class="case-body">
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text">
                                     <h4>1. Diseño de Experiencia</h4>
-                                    <p>El primer acercamiento con usuarios reveló un riesgo: la estructura clásica de tienda online empujaba al producto hacia una falsa sensación de ‘compra diaria’, algo que chocaba con la esencia del proyecto. La solución no fue cambiar el producto, sino el contexto. Para preservar ese aura de consumo ocasional y especial, rediseñé cada punto de contacto visual.</p>
+                                    <p>El primer acercamiento con usuarios reveló un riesgo: la estructura clásica de tienda online empujaba al producto hacia una falsa sensación de 'compra diaria', algo que chocaba con la esencia del proyecto. La solución no fue cambiar el producto, sino el contexto. Para preservar ese aura de consumo ocasional y especial, rediseñé cada punto de contacto visual.</p>
                                 </div>
                                 <div class="zig-zag-img"><img src="assets/bakeneko-estrategia.webp" alt="Estrategia de Negocio"></div>
                             </div>
@@ -219,7 +214,7 @@
                                 </div>
                                 <div class="zig-zag-img"><img src="assets/SPOT3D_HD.gif" alt="Sistema Phywebpal y Chatbot"></div>
                             </div>
-                        </div> 
+                        </div>
                         <div class="live-preview-section">
                             <h4>Demo Interactiva</h4>
                             <p>Navega por el proyecto real sin salir del portfolio:</p>
@@ -231,22 +226,29 @@
                             </div>
                             <a href="https://bakenekobakery.netlify.app/" target="_blank" class="external-link-btn">Ver proyecto en pantalla completa ↗</a>
                         </div>
-                    </div> 
+                    </div>
 
+                    <!-- ============ IDENTIDAD & ENCARGOS ============ -->
                     <div id="detail-identity" class="project-case-study">
                         <div class="case-header-block">
                             <h3>Identidad & Encargos</h3>
-                            <span class="case-tags">Brand Assets • E-Commerce Design • Custom Graphics • Client Work</span>
+                            <span class="case-tags">Branding • Editorial • Packaging • Client Work</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
                                 <img src="assets/identity-main.webp" alt="Identidad & Encargos" class="card-img">
                             </div>
                             <div class="case-intro-text">
-                                <p class="intro-text"><strong>El Reto:</strong> Traducir las necesidades de marcas independientes y encargos personalizados en soluciones gráficas de alta calidad. Esta sección muestra la habilidad para trabajar mano a mano con proyectos reales, cuidando la experiencia visual y el diseño de piezas impresas con un enfoque profesional y cercano.</p>
+                                <p class="intro-text"><strong>El Reto:</strong> Traducir las necesidades de marcas independientes y encargos personalizados en soluciones gráficas de alta calidad. Esta sección reúne tanto encargos reales de clientes como proyectos de exploración académica, demostrando la habilidad de trabajar en entornos profesionales y experimentales con la misma exigencia.</p>
                             </div>
                         </div>
                         <div class="case-body">
+
+                            <!-- ===== SECCIÓN: ENCARGOS REALES ===== -->
+                            <div class="case-subsection-label">
+                                <span>Encargos Reales</span>
+                            </div>
+
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text">
                                     <h4>1. CraftLove Journals (E-Commerce)</h4>
@@ -281,19 +283,35 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Stephen King: Red Collection -->
+
+                            <!-- 3. ACuatro (encargo real, nuevo) -->
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text">
-                                    <h4>3. Stephen King: Red Collection</h4>
+                                    <h4>3. ACuatro: Papelería e Impresión Gran Formato</h4>
+                                    <p>Encargo real para la papelería independiente <strong>ACuatro</strong>. El proyecto abarca el diseño integral de la identidad aplicada al punto de venta: mockups de papelería corporativa (tarjetas, bolsas, señalética interior), disposición tipográfica de <strong>un cartel de gran formato</strong> y preparación de las artes finales para imprenta. Enfoque editorial minimalista que equilibra la legibilidad a gran escala con una estética cuidada y coherente con el espacio físico de la tienda.</p>
+                                </div>
+                                <div class="zig-zag-img"><img src="assets/acuatro.webp" alt="Papelería ACuatro - Gran Formato"></div>
+                            </div>
+
+                            <!-- ===== DIVISOR ===== -->
+                            <div style="width: 100%; height: 1px; background-color: #EAEAEA; margin: 4rem 0 3rem;"></div>
+
+                            <!-- ===== SECCIÓN: PROYECTOS DE CURSO ===== -->
+                            <div class="case-subsection-label">
+                                <span>Proyectos de Curso</span>
+                            </div>
+
+                            <div class="zig-zag-row">
+                                <div class="zig-zag-text">
+                                    <h4>4. Stephen King: Red Collection</h4>
                                     <p>Diseño de una colección de tres clásicos de Stephen King (<i>It</i>, <i>Misery</i>, <i>The Shining</i>) con una identidad visual unificada. La propuesta parte de un fondo blanco impoluto, tipografía negra y un único acento en rojo sangre. Los elementos rojos (el globo, la máquina de escribir, el laberinto) fueron diseñados para ser <strong>troquelados</strong> en la portada física, creando un efecto de profundidad y un guiño a los coleccionistas. El sistema se extendió a marcapáginas, cuadernillos y merchandising.</p>
                                 </div>
                                 <div class="zig-zag-img"><img src="assets/stephen-king.webp" alt="Colección Stephen King"></div>
                             </div>
 
-                            <!-- Vidal: Packaging Natural -->
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
-                                    <h4>4. Vidal: Packaging Sostenible</h4>
+                                    <h4>5. Vidal: Packaging Sostenible</h4>
                                     <p>Diseño del packaging para la línea de chuches veganas y naturales de Vidal. El reto era comunicar <strong>sostenibilidad y origen natural</strong> sin caer en los tópicos del sector. Se optó por un sobre de papel kraft con ilustraciones botánicas lineales en tono dorado y una ventana en forma de gota que deja ver el producto. La paleta terrosa y la tipografía serif refuerzan la percepción de calidad artesanal y respeto por el medio ambiente.</p>
                                 </div>
                                 <div class="zig-zag-img"><img src="assets/vidal-packaging.webp" alt="Packaging Vidal"></div>
@@ -301,68 +319,15 @@
                         </div>
                     </div>
 
-                    <!-- MOTION & MULTIMEDIA -->
+                    <!-- ============ MOTION & 3D ============ -->
                     <div id="detail-multimedia" class="project-case-study">
                         <div class="case-header-block">
                             <h3>Producción Multimedia & Motion Graphics</h3>
                             <span class="case-tags">After Effects • Cinema 4D • Edición • Dirección de Arte</span>
                         </div>
                         <div class="case-body">
-                            
-                            <!-- 1. EL CORTE INGLÉS (PDF con visor nativo protegido) -->
-                            <div class="zig-zag-row" style="margin-bottom: 6rem;">
-                                <div class="zig-zag-text" style="flex: 0.8; display: flex; flex-direction: column; justify-content: center;">
-                                    <h4>Spot Publicitario: El Corte Inglés</h4>
-                                    <p>Pieza audiovisual centrada en el storytelling transgeneracional. El guion parte de un insight potente: <strong>el regalo es solo una excusa para acercarnos</strong>. A nivel visual, el spot se construye sobre dos recursos narrativos deliberados: la <strong>elipsis temporal espacial</strong> (encuadre fijo del mismo sofá a lo largo de décadas, convirtiéndolo en testigo mudo al estilo <i>Up</i> o <i>A Ghost Story</i>) y la <strong>psicología del color</strong> como línea temporal emocional — luces blancas y sombras duras en la juventud, tonos cálidos y luz de vela en la madurez. Detalles ocultos (generaciones de gatos, la cámara que reaparece como decoración, la manta que cubre al hombre) recompensan al espectador atento y dan profundidad al mensaje de marca: <strong>lo que importa permanece</strong>.</p>
-                                    
-                                    <!-- Visor PDF protegido (nativo del navegador) -->
-                                    <div style="margin-top: 1.5rem;">
-                                        <div style="width: 100%; height: 600px; border: 1px solid #EAEAEA; border-radius: 12px; overflow: hidden; background: #FAFAFA;">
-                                            <iframe 
-                                                src="assets/Dossier_Spot_E2_ClaraJimenezValles.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH&zoom=page-width" 
-                                                style="width: 100%; height: 100%; border: none; display: block;"
-                                                title="Dossier Analítico - Spot El Corte Inglés">
-                                            </iframe>
-                                        </div>
-                                        <p style="font-size: 0.75rem; color: #888; margin-top: 0.6rem; text-align: center;">
-                                            Documento en modo lectura · 
-                                            <a href="assets/Dossier_Spot_E2_ClaraJimenezValles.pdf" 
-                                               target="_blank" 
-                                               style="color: #2D2D2D; text-decoration: underline;">
-                                                Abrir en pantalla completa ↗
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div style="flex: 1.2; width: 100%;">
-                                    <div class="video-wrapper">
-                                        <iframe src="https://player.vimeo.com/video/1240435396?title=0&byline=0&portrait=0&dnt=1" 
-                                                allow="autoplay; fullscreen; picture-in-picture" 
-                                                allowfullscreen
-                                                title="Spot El Corte Inglés - Clara Jiménez">
-                                        </iframe>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- 2. STEAM MACHINE (Segundo) -->
-                            <div class="zig-zag-row reverse">
-                                <div class="zig-zag-text" style="flex: 0.8;">
-                                    <h4>CGI & Simulación: Steam Machine</h4>
-                                    <p>Spot conceptual de 20'' para la nueva consola de Valve, planteado como <strong>revelación por irrupción</strong>: la máquina aparece violentamente, rompiendo toda barrera. Secuencia: una tela azulada (cloth simulation) cae sobre la consola oculta; la consola flota, cae y colisiona con la tela original, que se fractura (Voronoi) en pedazos; bajo el suelo emergen letras clonadas que forman "STEAM"; cierre con efecto depredador/presa sobre la marca. Fondo negro absoluto para maximizar el contraste de brillos y partículas, y refuerzo del azul Valve como único color de la pieza. Tres escenas secundarias en Blender (consola abriéndose, ventilador girando) integradas en post con DaVinci Resolve: <strong>LumaKeyer + SoftGlow</strong> para los brillos que no se pudieron renderizar, y <strong>radial blur</strong> elíptico para simular profundidad de campo óptica.</p>
-                                </div>
-                                <div style="flex: 1.2; width: 100%;">
-                                    <div class="video-wrapper">
-                                        <iframe src="https://player.vimeo.com/video/1240436063?title=0&byline=0&portrait=0&dnt=1" 
-                                                allow="autoplay; fullscreen; picture-in-picture" 
-                                                allowfullscreen
-                                                title="Steam Machine - Clara Jiménez">
-                                        </iframe>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 3. LYRIC VIDEO: DRÁCULA (Tercero) -->
+                            <!-- 1. LYRIC VIDEO: DRÁCULA -->
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text" style="flex: 0.8;">
                                     <h4>Lyric Video: Drácula</h4>
@@ -379,10 +344,62 @@
                                 </div>
                             </div>
 
+                            <!-- 2. SPOT EL CORTE INGLÉS -->
+                            <div class="zig-zag-row reverse">
+                                <div class="zig-zag-text" style="flex: 0.8;">
+                                    <h4>Spot Publicitario: El Corte Inglés</h4>
+                                    <p>Pieza audiovisual centrada en el storytelling transgeneracional. El guion parte de un insight potente: <strong>el regalo es solo una excusa para acercarnos</strong>. A nivel visual, el spot se construye sobre dos recursos narrativos deliberados: la <strong>elipsis temporal espacial</strong> (encuadre fijo del mismo sofá a lo largo de décadas, convirtiéndolo en testigo mudo al estilo <i>Up</i> o <i>A Ghost Story</i>) y la <strong>psicología del color</strong> como línea temporal emocional — luces blancas y sombras duras en la juventud, tonos cálidos y luz de vela en la madurez. Detalles ocultos (generaciones de gatos, la cámara que reaparece como decoración, la manta que cubre al hombre) recompensan al espectador atento y dan profundidad al mensaje de marca: <strong>lo que importa permanece</strong>.</p>
+                                </div>
+                                <div style="flex: 1.2; width: 100%;">
+                                    <div class="video-wrapper">
+                                        <iframe src="https://player.vimeo.com/video/1240435396?title=0&byline=0&portrait=0&dnt=1" 
+                                                allow="autoplay; fullscreen; picture-in-picture" 
+                                                allowfullscreen
+                                                title="Spot El Corte Inglés - Clara Jiménez">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PDF DOSSIER (horizontal A4) -->
+                            <div class="pdf-dossier-section">
+                                <h4>Análisis Creativo Completo</h4>
+                                <p>Desglose técnico y narrativo del spot: teoría audiovisual, psicología del color y detalles ocultos.</p>
+                                <div class="pdf-dossier-frame">
+                                    <iframe 
+                                        src="assets/Dossier_Spot_E2_ClaraJimenezValles.pdf#toolbar=0&navpanes=0&scrollbar=0&view=Fit&zoom=page-fit" 
+                                        title="Dossier Analítico - Spot El Corte Inglés"
+                                        scrolling="no">
+                                    </iframe>
+                                </div>
+                                <a href="assets/Dossier_Spot_E2_ClaraJimenezValles.pdf" 
+                                target="_blank" 
+                                class="external-link-btn">
+                                    Abrir dossier completo ↗
+                                </a>
+                            </div>
+
+                            <!-- 3. STEAM MACHINE -->
+                            <div class="zig-zag-row">
+                                <div class="zig-zag-text" style="flex: 0.8;">
+                                    <h4>CGI & Simulación: Steam Machine</h4>
+                                    <p>Spot conceptual de 20'' para la nueva consola de Valve, planteado como <strong>revelación por irrupción</strong>: la máquina aparece violentamente, rompiendo toda barrera. Secuencia: una tela azulada (cloth simulation) cae sobre la consola oculta; la consola flota, cae y colisiona con la tela original, que se fractura (Voronoi) en pedazos; bajo el suelo emergen letras clonadas que forman "STEAM"; cierre con efecto depredador/presa sobre la marca. Fondo negro absoluto para maximizar el contraste de brillos y partículas, y refuerzo del azul Valve como único color de la pieza. Tres escenas secundarias en Blender (consola abriéndose, ventilador girando) integradas en post con DaVinci Resolve: <strong>LumaKeyer + SoftGlow</strong> para los brillos que no se pudieron renderizar, y <strong>radial blur</strong> elíptico para simular profundidad de campo óptica.</p>
+                                </div>
+                                <div style="flex: 1.2; width: 100%;">
+                                    <div class="video-wrapper">
+                                        <iframe src="https://player.vimeo.com/video/1240436063?title=0&byline=0&portrait=0&dnt=1" 
+                                                allow="autoplay; fullscreen; picture-in-picture" 
+                                                allowfullscreen
+                                                title="Steam Machine - Clara Jiménez">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- SEMÁNTICA COGNITIVA (DISEÑO EDITORIAL SIN IMÁGENES) -->
+                    <!-- ============ SEMÁNTICA (Ensayo) ============ -->
                     <div id="detail-semantics" class="project-case-study">
                         <div class="case-header-block">
                             <h3>La Semántica Cognitiva en el E-commerce</h3>
@@ -390,11 +407,10 @@
                         </div>
                         
                         <div class="case-body" style="max-width: 900px; margin: 0 auto; padding-top: 2rem;">
-
                             <div style="border-left: 3px solid #00FFFF; padding-left: 1.5rem; margin-bottom: 3rem;">
                                 <p style="font-size: 1rem; color: #666; font-style: italic; line-height: 1.6;">
                                     <strong style="color: #2D2D2D; font-style: normal; display: block; margin-bottom: 0.5rem;">Contexto del Proyecto:</strong>
-                                    Este ensayo nace como una investigación académica para explorar la intersección entre el diseño de producto, la inteligencia artificial y la semántica cognitiva. El objetivo de este texto es teorizar sobre cómo el e-commerce evolucionará de interfaces puramente visuales a ecosistemas empáticos y conversacionales.
+                                    Ensayo académico para la asignatura Merchandising y Marketing Interactivo (UDIT, 2025/26, Prof. Dra. Carolina Godayol). Una investigación sobre la intersección entre el diseño de producto, la inteligencia artificial y la semántica cognitiva. El objetivo es teorizar sobre cómo el e-commerce evolucionará de interfaces puramente visuales a ecosistemas empáticos y conversacionales.
                                 </p>
                             </div>
                             
@@ -414,57 +430,13 @@
                                 <h4 style="font-size: 1.4rem; margin-bottom: 1rem;">El impacto real: comercio más humano</h4>
                                 <p style="color: #555; line-height: 1.7;">La gran ganadora será la democratización. Hoy el idioma es una barrera brutal de entrada al mercado global. Mañana, productores locales podrán vender directamente al mundo sin depender de intermediarios. La tecnología se encargará de la adaptación cultural, reduciendo malentendidos y permitiéndonos comprar historias y valores en vez de productos mal descritos. <strong>El consumo dejará de ser una transacción logística para convertirse en una relación humana.</strong></p>
                             </div>
-
                         </div>
                     </div>
 
-                    <!-- WEB & EDITORIAL (CBA + Diegéstica) -->
+                    <!-- ============ WEB & EDITORIAL ============ -->
                     <div id="detail-webeditorial" class="project-case-study">
                         
-                        <!-- BLOQUE 1: CBA MAGAZINE -->
-                        <div class="case-header-block">
-                            <h3>CBA: Moda Sostenible sin Filtros</h3>
-                            <span class="case-tags">Diseño Editorial Web • Frontend • Branding • CSS Grid</span>
-                        </div>
-                        <div class="case-intro-row">
-                            <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/cba-main.webp" alt="CBA Magazine" class="card-img">
-                            </div>
-                            <div class="case-intro-text">
-                                <p class="intro-text"><strong>El Reto:</strong> Conceptualizar y maquetar una revista digital de moda sostenible que se desmarque por completo del minimalismo orgánico y los tonos tierra habituales del sector. La propuesta visual busca conectar con un público joven y crítico, huyendo del <i>greenwashing</i> mediante una actitud más cruda y directa.</p>
-                            </div>
-                        </div>
-                        <div class="case-body">
-                            <div class="zig-zag-row">
-                                <div class="zig-zag-text">
-                                    <h4>Sistema de Diseño y Tipografía</h4>
-                                    <p>La identidad se construyó sobre un sistema de collage digital desordenado intencionadamente. Para equilibrar el peso visual, se combinó la tipografía "Rock Salt" (simulando escritura manual para elementos destacados como el <i>hover</i> de los post-its) con la limpieza técnica y rectangular de "Ubuntu Mono" para los cuerpos de texto, aportando un aire de manifiesto <i>hacker</i>.</p>
-                                </div>
-                                <div class="zig-zag-img"><img src="assets/cba-typo.webp" alt="Tipografía CBA"></div>
-                            </div>
-                            <div class="zig-zag-row reverse">
-                                <div class="zig-zag-text">
-                                    <h4>Componentes Interactivos (CSS Avanzado)</h4>
-                                    <p>El diseño de componentes rompe las convenciones corporativas: el pop-up de inicio de sesión y la política de cookies se maquetaron replicando la estética de un ticket de compra impreso. Adicionalmente, la sección <i>Backstage</i> incorpora marcos de televisores antiguos con efectos de distorsión visual (<i>glitch</i>) construidos con CSS puro para presentar el contenido en vídeo.</p>
-                                </div>
-                                <div class="zig-zag-img"><img src="assets/cba-components.webp" alt="Componentes UI CBA"></div>
-                            </div>
-                        </div>
-                        <div class="live-preview-section">
-                            <h4>Navegación Web</h4>
-                            <div class="iframe-window">
-                                <div class="browser-header">
-                                    <span class="dot close"></span><span class="dot min"></span><span class="dot max"></span>
-                                </div>
-                                <iframe src="https://clarajv8.github.io/CBA/" title="CBA Magazine Preview" loading="lazy" scrolling="no"></iframe>
-                            </div>
-                            <a href="https://github.com/Clarajv8/CBA.git" target="_blank" class="external-link-btn">Ver Repositorio en GitHub ↗</a>
-                        </div>
-
-                        <!-- SEPARADOR VISUAL ENTRE PROYECTOS -->
-                        <div style="width: 100%; height: 1px; background-color: #EAEAEA; margin: 6rem 0;"></div>
-
-                        <!-- BLOQUE 2: DIEGÉSTICA -->
+                        <!-- BLOQUE 1: DIEGÉSTICA (primero) -->
                         <div class="case-header-block">
                             <h3>Diegéstica: Arquitectos de Realidades</h3>
                             <span class="case-tags">Maquetación Web • CSS Avanzado • Cargo Collective • UI/UX</span>
@@ -493,20 +465,73 @@
                                 <div class="zig-zag-img"><img src="assets/diegestica-css.webp" alt="Código CSS"></div>
                             </div>
                         </div>
-                        <div class="live-preview-section">
-                            <h4>Navegación Web</h4>
-                            <div class="iframe-window">
-                                <div class="browser-header">
-                                    <span class="dot close"></span><span class="dot min"></span><span class="dot max"></span>
-                                </div>
-                                <iframe src="https://clarajv8.github.io/DIEGESTICA/" title="Diegéstica Live Preview" loading="lazy" scrolling="no"></iframe>
+
+                        <!-- SEPARADOR -->
+                        <div style="width: 100%; height: 1px; background-color: #EAEAEA; margin: 6rem 0;"></div>
+
+                        <!-- BLOQUE 2: CBA MAGAZINE -->
+                        <div class="case-header-block">
+                            <h3>CBA: Moda Sostenible sin Filtros</h3>
+                            <span class="case-tags">Diseño Editorial Web • Frontend • Branding • CSS Grid</span>
+                        </div>
+                        <div class="case-intro-row">
+                            <div class="project-image-placeholder vertical-img case-main-img">
+                                <img src="assets/cba-main.webp" alt="CBA Magazine" class="card-img">
                             </div>
-                            <a href="https://github.com/Clarajv8/DIEGESTICA.git" target="_blank" class="external-link-btn">Ver Repositorio en GitHub ↗</a>
+                            <div class="case-intro-text">
+                                <p class="intro-text"><strong>El Reto:</strong> Conceptualizar y maquetar una revista digital de moda sostenible que se desmarque por completo del minimalismo orgánico y los tonos tierra habituales del sector. La propuesta visual busca conectar con un público joven y crítico, huyendo del <i>greenwashing</i> mediante una actitud más cruda y directa.</p>
+                            </div>
+                        </div>
+                        <div class="case-body">
+                            <div class="zig-zag-row">
+                                <div class="zig-zag-text">
+                                    <h4>Sistema de Diseño y Tipografía</h4>
+                                    <p>La identidad se construyó sobre un sistema de collage digital desordenado intencionadamente. Para equilibrar el peso visual, se combinó la tipografía "Rock Salt" (simulando escritura manual para elementos destacados como el <i>hover</i> de los post-its) con la limpieza técnica y rectangular de "Ubuntu Mono" para los cuerpos de texto, aportando un aire de manifiesto <i>hacker</i>.</p>
+                                </div>
+                                <div class="zig-zag-img"><img src="assets/cba-typo.webp" alt="Tipografía CBA"></div>
+                            </div>
+                            <div class="zig-zag-row reverse">
+                                <div class="zig-zag-text">
+                                    <h4>Componentes Interactivos (CSS Avanzado)</h4>
+                                    <p>El diseño de componentes rompe las convenciones corporativas: el pop-up de inicio de sesión y la política de cookies se maquetaron replicando la estética de un ticket de compra impreso. Adicionalmente, la sección <i>Backstage</i> incorpora marcos de televisores antiguos con efectos de distorsión visual (<i>glitch</i>) construidos con CSS puro para presentar el contenido en vídeo.</p>
+                                </div>
+                                <div class="zig-zag-img"><img src="assets/cba-components.webp" alt="Componentes UI CBA"></div>
+                            </div>
+                        </div>
+
+                        <!-- SECCIÓN DE PREVIEWS AL FINAL -->
+                        <div class="live-preview-section">
+                            <h4>Navegación en vivo</h4>
+                            <p>Explora ambas webs reales (si una no carga, ábrela en pestaña nueva):</p>
+                            
+                            <div class="live-preview-grid">
+                                <div class="live-preview-item">
+                                    <h5>Diegéstica</h5>
+                                    <div class="iframe-window">
+                                        <div class="browser-header">
+                                            <span class="dot close"></span><span class="dot min"></span><span class="dot max"></span>
+                                        </div>
+                                        <iframe src="https://clarajv8.github.io/DIEGESTICA/" title="Diegéstica Live Preview" loading="lazy"></iframe>
+                                    </div>
+                                    <a href="https://clarajv8.github.io/DIEGESTICA/" target="_blank" class="external-link-btn">Abrir Diegéstica ↗</a>
+                                </div>
+
+                                <div class="live-preview-item">
+                                    <h5>CBA Magazine</h5>
+                                    <div class="iframe-window">
+                                        <div class="browser-header">
+                                            <span class="dot close"></span><span class="dot min"></span><span class="dot max"></span>
+                                        </div>
+                                        <iframe src="https://clarajv8.github.io/CBA/" title="CBA Magazine Preview" loading="lazy"></iframe>
+                                    </div>
+                                    <a href="https://clarajv8.github.io/CBA/" target="_blank" class="external-link-btn">Abrir CBA ↗</a>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
-                    
-                    <!-- UX/UI MOBILE: TARANTINO -->
+
+                    <!-- ============ UX/UI MOBILE (Tarantino) ============ -->
                     <div id="detail-mobile" class="project-case-study">
                         <div class="case-header-block">
                             <h3>Exposición Tarantino: App Interactiva</h3>
@@ -544,47 +569,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <div id="detail-branding" class="project-case-study">
-                        <div class="case-header-block">
-                            <h3>Ryanair: Rediseño de Identidad</h3>
-                            <span class="case-tags">Branding • Estrategia • Identidad Visual • Aplicaciones</span>
-                        </div>
-                        <div class="case-intro-row">
-                            <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/ryanair-main.webp" alt="Ryanair Rebranding" class="card-img">
-                            </div>
-                            <div class="case-intro-text">
-                                <p class="intro-text"><strong>El Reto:</strong> Ryanair, líder en vuelos low-cost, necesitaba una identidad visual más distintiva y memorable. Su logotipo histórico, aunque reconocible, carecía de la limpieza y dinamismo que la marca proyecta en su comunicación actual. El objetivo era crear un sistema visual que transmitiera los valores de la aerolínea: accesibilidad, eficiencia y modernidad, sin perder su esencia.</p>
-                            </div>
-                        </div>
-                        <div class="case-body">
-                            <div class="zig-zag-row">
-                                <div class="zig-zag-text">
-                                    <h4>Investigación y Estrategia</h4>
-                                    <p>Partiendo de un análisis de la competencia (EasyJet, Vueling, etc.) y del público objetivo (viajeros de bajo presupuesto, estudiantes, turistas), se definió una dirección de arte basada en el <strong>minimalismo dinámico</strong>. La paleta se redujo al amarillo y azul corporativos, y se apostó por una tipografía sans-serif de trazos limpios y geométricos para la marca, buscando máxima legibilidad en cualquier soporte.</p>
-                                </div>
-                                <div class="zig-zag-img"><img src="assets/ryanair-estrategia.webp" alt="Estrategia de marca"></div>
-                            </div>
-                            <div class="zig-zag-row reverse">
-                                <div class="zig-zag-text">
-                                    <h4>Construcción del Nuevo Logotipo</h4>
-                                    <p>El nuevo logotipo parte de una "R" estilizada que integra el concepto de movimiento y fluidez. Se realizaron múltiples iteraciones (sketches) hasta llegar a una forma que funciona tanto en positivo como en negativo, y que se adapta a cualquier aplicación, desde el fuselaje de un avión hasta una tarjeta de embarque digital. El resultado es una marca más memorable y versátil.</p>
-                                </div>
-                                <div class="zig-zag-img"><img src="assets/ryanair-logo.webp" alt="Evolución del logotipo"></div>
-                            </div>
-                            <div class="zig-zag-row">
-                                <div class="zig-zag-text">
-                                    <h4>Aplicaciones y Mockups</h4>
-                                    <p>El sistema de identidad se desplegó en múltiples puntos de contacto: papelería corporativa (tarjetas, sobres), <strong>merchandising</strong> (tazas, bolsas), señalética en aeropuertos y una maqueta de la interfaz web de reservas. Cada aplicación refuerza la nueva personalidad de la marca: cercana, eficiente y con un toque de color vibrante.</p>
-                                </div>
-                                <div class="zig-zag-img"><img src="assets/ryanair-aplicaciones.webp" alt="Aplicaciones de la marca"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                
-            </div> <div id="contact-content" class="content-block">
+            </div>
+
+            <div id="contact-content" class="content-block">
                 <h2>Hablemos.</h2>
                 <p>Actualmente abierta a conversaciones profesionales interesantes. Si tienes un proyecto en mente, me encantaría conocerlo.</p>
                 
@@ -627,9 +615,8 @@
             <a id="sublink-bakeneko" class="sub-link" onclick="toggleProjectDetail('bakeneko')">Bakeneko</a>
             <a id="sublink-webeditorial" class="sub-link" onclick="toggleProjectDetail('webeditorial')">Web & Editorial</a>
             <a id="sublink-multimedia" class="sub-link" onclick="toggleProjectDetail('multimedia')">Motion & 3D</a>
-            <a id="sublink-semantics" class="sub-link" onclick="toggleProjectDetail('semantics')">Research</a>
-            <a id="sublink-branding" class="sub-link" onclick="toggleProjectDetail('branding')">Branding</a>
             <a id="sublink-mobile" class="sub-link" onclick="toggleProjectDetail('mobile')">Mobile</a>
+            <a id="sublink-semantics" class="sub-link sub-link-essay" onclick="toggleProjectDetail('semantics')">Ensayo</a>
         </nav>
 
         <div id="image-lightbox" class="lightbox-modal" onclick="closeLightbox()">
