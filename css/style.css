@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
     background-color: #FDFDFB; 
     height: 100vh;
@@ -12,7 +14,32 @@ body {
     color: #2D2D2D;
 }
 
-/* === FONDO ANIMADO === */
+.iframe-window {
+    position: relative;
+    background-color: #FAFAFA;
+}
+.iframe-window::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    background: #FAFAFA;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+.iframe-window.is-loaded::after {
+    opacity: 0;
+}
+
+.soft-glitch-link,
+.sub-link,
+.skill-bubble,
+.project-card h3 {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 .ambient-background {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
@@ -51,7 +78,6 @@ body {
     100% { transform: scale(1.2) translate(-5vw, -5vh); }
 }
 
-/* === EL EFECTO === */
 .water-split {
     position: fixed;
     border-radius: 50%;
@@ -69,8 +95,6 @@ body {
     100% { transform: translate(-50%, -50%) scale(15); opacity: 0; } 
 }
 
-
-/* === ESTILOS DEL MENÚ === */
 .main-menu {
     position: absolute;
     left: 50%; top: 50%;
@@ -107,7 +131,6 @@ body {
 }
 
 
-/* === ÁREA DE CONTENIDO === */
 .content-area {
     position: absolute;
     left: 10%; top: 50%;
@@ -145,6 +168,13 @@ body {
     transform: translateY(0);
 }
 
+.about-text-content h1 {
+    font-size: 3rem;
+    letter-spacing: -1.5px;
+    margin-bottom: 1rem;
+    color: #2D2D2D;
+}
+
 .content-block h2 {
     font-size: 3rem;
     letter-spacing: -1.5px;
@@ -157,8 +187,6 @@ body {
     color: #555;
 }
 
-
-/* === MAQUETACIÓN EDITORIAL === */
 .about-grid {
     display: grid;
     grid-template-columns: 240px 1fr; 
@@ -183,7 +211,6 @@ body {
     color: #2D2D2D;
 }
 
-/* === COLUMNA IZQUIERDA: FOTO === */
 .about-sidebar {
     display: flex;
     flex-direction: column;
@@ -193,7 +220,7 @@ body {
 .image-frame {
     width: 100%;
     aspect-ratio: 1 / 1;
-    position: relative;
+    position: relative; 
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #EAEAEA; 
@@ -220,7 +247,6 @@ body {
     filter: grayscale(0%); 
 }
 
-/* === BURBUJAS 4.0 === */
 .interactive-skills {
     display: flex;
     flex-direction: column;
@@ -236,7 +262,6 @@ body {
     border-radius: 20px; 
     padding: 0.6rem 1.2rem;
     background-color: rgba(253, 253, 251, 0.2);
-    cursor: help;
     outline: none;
     transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
@@ -295,7 +320,6 @@ body {
     transform: translateY(0);
 }
 
-/* === PROYECTOS === */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -324,7 +348,6 @@ body {
     transition: transform 0.4s ease;
 }
 
-/* === IMÁGENES DENTRO DE LAS CASILLAS === */
 .card-img {
     width: 100%;
     height: 100%;
@@ -333,8 +356,6 @@ body {
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.4, 1);
 }
 
-
-/* === TIPOGRAFÍA Y ESTRUCTURA DEL CASE STUDY === */
 .case-header {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
@@ -350,9 +371,14 @@ body {
 
 .case-tags {
     font-size: 0.8rem;
-    color: #A3A3A3;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.case-tags,
+.case-header-block .case-tags,
+.featured-essay-eyebrow {
+    color: #6B6B6B;
 }
 
 .case-body p {
@@ -417,8 +443,6 @@ body {
     text-shadow: 1px 0px 3px rgba(255, 0, 128, 0.2), -1px 0px 3px rgba(0, 255, 255, 0.2);
 }
 
-
-/* === CONTACTO === */
 #contact-content p {
     margin-bottom: 2rem;
     max-width: 80%;
@@ -431,13 +455,16 @@ body {
 }
 
 .contact-item {
-    display: flex;
-    flex-direction: column;
     text-decoration: none;
     color: #2D2D2D;
-    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     border-left: 2px solid #EAEAEA;
     padding-left: 1rem;
+    transition: border-left-color 0.3s ease;
 }
 
 .contact-item .label {
@@ -477,7 +504,43 @@ body {
     filter: drop-shadow(2px 0px 2px rgba(255, 0, 128, 0.3)) drop-shadow(-2px 0px 2px rgba(0, 255, 255, 0.3));
 }
 
-/* === PROYECTOS: CROSS-FADE con position swap (sin huecos) === */
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #2D2D2D;
+    flex: 1;
+    min-width: 0;
+}
+
+.copy-email-btn {
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #6B6B6B;
+    background: transparent;
+    border: 1px solid #EAEAEA;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.copy-email-btn:hover {
+    color: #2D2D2D;
+    border-color: #2D2D2D;
+    transform: translateY(-1px);
+}
+
+.copy-email-btn.copied {
+    color: #27C93F;
+    border-color: #27C93F;
+}
+
 #works-content {
     display: block;
     position: relative;
@@ -534,7 +597,6 @@ body {
     width: 100%; 
 }
 
-/* === CONTENIDO Y SCROLL INTERNO === */
 .case-content {
     padding-top: 0;
 }
@@ -544,7 +606,6 @@ body {
 
 .intro-text { font-size: 1.05rem; line-height: 1.7; color: #4A4A4A; margin-bottom: 3rem; }
 
-/* === LAYOUT EN ZIG-ZAG === */
 .zig-zag-row {
     display: flex;
     align-items: center;
@@ -575,6 +636,7 @@ body {
 
 .zig-zag-img {
     flex: 1;
+    aspect-ratio: 16 / 10;
     border-radius: 12px;
     overflow: hidden;
     background-color: #EFEFEF;
@@ -583,12 +645,11 @@ body {
 
 .zig-zag-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
 }
 
-/* === SOLUCIÓN AL SOLAPAMIENTO DEL MENÚ === */
 #portfolio-container.case-study-active .main-menu {
     left: 50%; top: 5vh; transform: translateX(-50%);
     flex-direction: row; gap: 3rem; align-items: center;
@@ -602,8 +663,6 @@ body {
     transform: translateY(0); 
 }
 
-
-/* === SUBMENÚ DE PROYECTOS === */
 .project-sub-menu {
     position: absolute;
     left: 50%;
@@ -624,7 +683,6 @@ body {
     transition: all 0.6s cubic-bezier(0.25, 1, 0.4, 1) 0.4s; 
 }
 
-/* === ANIMACIÓN DE CORCHETES (EFECTO TECH) === */
 .sub-link {
     font-size: 0.9rem;
     font-weight: 600; 
@@ -672,7 +730,6 @@ body {
     transform: translateX(0);
 }
 
-/* === PROYECTOS: TRANSICIÓN FLUIDA Y CORRECTA === */
 .project-case-study {
     position: absolute;
     inset: 0;
@@ -703,7 +760,6 @@ body {
     z-index: 2;
 }
 
-/* === NUEVAS CLASES PARA EL COMPORTAMIENTO CENTRAL INTEGRADO === */
 .case-header-block {
     width: 100%;
     border-bottom: 1px solid #EAEAEA;
@@ -719,7 +775,6 @@ body {
 
 .case-header-block .case-tags {
     font-size: 0.85rem;
-    color: #A3A3A3;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
@@ -755,7 +810,6 @@ body {
     margin-top: 2rem;
 }
 
-/* === VISOR INTERACTIVO PANORÁMICO (IFRAME) === */
 .live-preview-section {
     grid-column: 1 / -1;
     width: 100%;
@@ -839,7 +893,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* === MODIFICADOR PARA PROTOTIPOS MÓVILES (ELYSIUM) === */
 .iframe-window.mobile-frame {
     max-width: 360px; 
     aspect-ratio: 9 / 19; 
@@ -867,7 +920,6 @@ body {
     border-radius: 28px;
 }
 
-/* === GALERÍAS INTERACTIVAS === */
 .interactive-gallery {
    flex: 1; 
     display: flex;
@@ -921,7 +973,6 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* === LIGHTBOX MODAL (VENTANA EMERGENTE) === */
 .lightbox-modal {
     position: fixed;
     top: 0; left: 0; 
@@ -1175,9 +1226,6 @@ body {
     letter-spacing: -0.5px;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-    color: #666;
 }
 
 @media (max-width: 900px) {
@@ -1220,6 +1268,113 @@ body {
     .featured-essay-quote {
         font-size: 0.95rem;
     }
+}
+
+.back-to-projects {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #A3A3A3;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+.back-to-projects:hover { color: #2D2D2D; }
+
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: #2D2D2D;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #EAEAEA;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+.status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #27C93F;
+    box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.6);
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(39, 201, 63, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0); }
+}
+
+.project-case-study {
+    -webkit-overflow-scrolling: touch;
+}
+
+.content-block {
+    overscroll-behavior: contain;
+}
+
+.project-card:focus-visible {
+    outline: 2px solid #2D2D2D;
+    outline-offset: 4px;
+    border-radius: 16px;
+}
+
+.soft-glitch-link:focus-visible,
+.sub-link:focus-visible {
+    outline: 2px solid #00FFFF;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: #2D2D2D;
+    color: #FDFDFB;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    z-index: 9999;
+    font-size: 0.85rem;
+    transition: top 0.3s ease;
+}
+.skip-link:focus {
+    top: 1rem;
+}
+
+.about-cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.about-cta-btn {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 1.8rem;
+    border: 1px solid #2D2D2D;
+    border-radius: 30px;
+    background: #2D2D2D;
+    color: #FDFDFB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-cta-btn:hover {
+    background: transparent;
+    color: #2D2D2D;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(45, 45, 45, 0.15);
 }
 
 
@@ -1365,7 +1520,6 @@ body {
     }
 }
 
-/* === FIX HOVER STICKY EN TÁCTIL === */
 @media (hover: none) {
     .stacked-card:hover {
         transform: none !important;
@@ -1401,4 +1555,22 @@ body {
         transform: none;
         box-shadow: none;
     }
+}
+
+.case-tags,
+.case-header-block .case-tags,
+.featured-essay-eyebrow,
+.case-subsection-label,
+.contact-item .label,
+.project-card p {
+    color: #6B6B6B;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .ambient-background, .water-split { display: none !important; }
 }

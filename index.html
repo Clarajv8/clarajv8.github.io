@@ -6,23 +6,63 @@
     <title>Clara Jiménez | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description" content="Clara Jiménez — Diseñadora gráfica y de producto digital. UX/UI, desarrollo web frontend y dirección de arte.">
+    <meta property="og:description" content="Diseñadora gráfica y de producto digital. UX/UI, desarrollo web frontend y dirección de arte.">
+    <meta name="twitter:description" content="Diseñadora gráfica y de producto digital. UX/UI, desarrollo web frontend y dirección de arte.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Clara Jiménez | Portfolio">
+    <meta property="og:image" content="assets/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clara Jiménez — Diseñadora gráfica y de producto digital. El mejor diseño es el que no se nota.">
+    <meta property="og:url" content="https://clarajv8.github.io/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clara Jiménez | Portfolio">
+    <meta name="twitter:image" content="assets/og-image.webp">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="canonical" href="https://clarajv8.github.io/">
+
+    <noscript>
+        <style>
+            .ambient-background, .water-split { display: none; }
+            .content-area { opacity: 1 !important; pointer-events: auto !important; }
+            .content-block { opacity: 1 !important; pointer-events: auto !important; transform: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
-
+    <a href="#about-content" class="skip-link">Saltar al contenido</a>
     <div class="ambient-background">
         <div class="color-zone zone-cyan"></div>
         <div class="color-zone zone-magenta"></div>
     </div>
 
     <div id="portfolio-container" class="layout-split">
-        
-        <main class="content-area" id="content-display">
-            
-            <div id="about-content" class="content-block active">
-                <div class="about-grid">
+        <nav class="main-menu">
+            <a class="soft-glitch-link active-btn" onclick="toggleSection('about', this)">Quién soy</a>
+            <a class="soft-glitch-link" onclick="toggleSection('works', this)">Proyectos</a>
+            <a class="soft-glitch-link" onclick="toggleSection('contact', this)">Contacto</a>
+        </nav>
 
-                    <aside class="about-sidebar">
-                        
+        <nav class="project-sub-menu">
+            <a id="sublink-identity" class="sub-link" onclick="toggleProjectDetail('identity')">Identidad</a>
+            <a id="sublink-elysium" class="sub-link" onclick="toggleProjectDetail('elysium')">Elysium</a>
+            <a id="sublink-bakeneko" class="sub-link" onclick="toggleProjectDetail('bakeneko')">Bakeneko</a>
+            <a id="sublink-webeditorial" class="sub-link" onclick="toggleProjectDetail('webeditorial')">Web & Editorial</a>
+            <a id="sublink-multimedia" class="sub-link" onclick="toggleProjectDetail('multimedia')">Motion & 3D</a>
+            <a id="sublink-mobile" class="sub-link" onclick="toggleProjectDetail('mobile')">Mobile</a>
+            <a id="sublink-semantics" class="sub-link sub-link-essay" onclick="toggleProjectDetail('semantics')">Ensayo</a>
+        </nav>
+
+        <main class="content-area" id="content-display">
+            <div id="about-content" class="content-block active" tabindex="-1">
+                <div class="about-grid">
+                    <aside class="about-sidebar">                   
                         <div class="image-frame">
                             <img src="assets/clara-foto.webp" alt="Clara Foto" class="profile-photo">
                         </div>
@@ -30,23 +70,27 @@
                         <div class="interactive-skills">
                             <div class="skill-bubble" tabindex="0">
                                 <span class="skill-title">UX/UI & Web</span>
-                                <span class="skill-details">Figma, UX Research, Wireframing, HTML5, CSS3, JS</span>
+                                <span class="skill-details">Figma, UX Research, Wireframing, HTML5, CSS3, JS, PHP, GitHub</span>
                             </div>
-                            <div class="skill-bubble" tabindex="0">
-                                <span class="skill-title">Graphic & Editorial</span>
-                                <span class="skill-details">Adobe CC (Ps, Ai, Id, Acrobat)</span>
-                            </div>
-                            <div class="skill-bubble" tabindex="0">
-                                <span class="skill-title">Motion & 3D</span>
-                                <span class="skill-details">After Effects, Premiere, Blender, C4D</span>
-                            </div>
+                                <div class="skill-bubble" tabindex="0">
+                                    <span class="skill-title">Graphic & Editorial</span>
+                                    <span class="skill-details">Adobe CC (Ps, Ai, Id, Acrobat) • Branding • Packaging</span>
+                                </div>
+                                <div class="skill-bubble" tabindex="0">
+                                    <span class="skill-title">Motion & 3D</span>
+                                    <span class="skill-details">After Effects, Premiere, DaVinci, Blender, C4D, Redshift</span>
+                                </div>
                         </div>
                     </aside>
 
                     <article class="about-text-content">
-                        <h2>Clara Jiménez</h2>
+                        <div class="availability-badge">
+                            <span class="status-dot"></span>
+                            Disponible para proyectos
+                        </div>
+                        <h1>Clara Jiménez</h1>
                         <p class="about-paragraph">
-                            Soy diseñadora gráfica y, sobre todo, una persona curiosa. No concibo el diseño como una capa de maquillaje, sino como la estructura que hace que una idea funcione, se entienda y, además, guste.
+                            Soy diseñadora gráfica y de producto digital, y sobre todo una persona curiosa. No concibo el diseño como una capa de maquillaje, sino como la estructura que hace que una idea funcione, se entienda y, además, guste.
                         </p>
                         <p class="about-paragraph">
                             Me muevo con soltura entre el diseño de interfaces, el motion graphics y el 3D, y disfruto metiéndome en los procesos técnicos hasta que todo encaja. No me da miedo lo complejo: me apasiona resolver problemas visuales con soluciones limpias, funcionales y con intención.
@@ -54,6 +98,11 @@
                         <p class="about-paragraph highlight-text">
                             Aprendo rápido, me obsesiona la tecnología y creo que el mejor diseño es el que no se nota, pero se echa de menos cuando no está.
                         </p>
+                        <div class="about-cta">
+                            <button class="about-cta-btn" onclick="toggleSection('works', document.querySelector('.main-menu .soft-glitch-link:nth-child(2)'))">
+                                Ver proyectos →
+                            </button>
+                        </div>
                     </article>
 
                 </div>
@@ -65,49 +114,61 @@
                     <h2>Proyectos destacados</h2>
                     <div class="projects-grid">
                         <!-- 1. Identidad & Encargos -->
-                        <div class="project-card" onclick="toggleProjectDetail('identity')">
+                        <div class="project-card" role="button" tabindex="0"
+                            onclick="toggleProjectDetail('identity')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProjectDetail('identity')}">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/identity-main.webp" alt="Identidad & Encargos" class="card-img">
+                                <img src="assets/identity-main.webp" alt="Identidad & Encargos" class="card-img" loading="lazy">
                             </div>
                             <h3>Identidad & Encargos</h3>
                             <p>Branding • Editorial • Packaging</p>
                         </div>
                         <!-- 2. Elysium Scapes -->
-                        <div class="project-card" onclick="toggleProjectDetail('elysium')">
+                        <div class="project-card" role="button" tabindex="0"
+                            onclick="toggleProjectDetail('elysium')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProjectDetail('elysium')}">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/elysium.webp" alt="Elysium Scapes" class="card-img">
+                                <img src="assets/elysium.webp" alt="Elysium Scapes" class="card-img" loading="lazy">
                             </div>
                             <h3>Elysium Scapes</h3>
                             <p>Advanced UI & Prototyping</p>
                         </div>
                         <!-- 3. Bakeneko Bakery -->
-                        <div class="project-card" onclick="toggleProjectDetail('bakeneko')">
+                        <div class="project-card" role="button" tabindex="0"
+                            onclick="toggleProjectDetail('bakeneko')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProjectDetail('bakeneko')}">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/bakeneko.webp" alt="Bakeneko Bakery" class="card-img">
+                                <img src="assets/bakeneko.webp" alt="Bakeneko Bakery" class="card-img" loading="lazy">
                             </div>
                             <h3>Bakeneko Bakery</h3>
                             <p>Web Development</p>
                         </div>
                         <!-- 4. Web & Editorial (Diegéstica + CBA) -->
-                        <div class="project-card" onclick="toggleProjectDetail('webeditorial')">
+                        <div class="project-card" role="button" tabindex="0"
+                            onclick="toggleProjectDetail('webeditorial')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProjectDetail('webeditorial')}">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/cba-main.webp" alt="Web & Editorial" class="card-img">
+                                <img src="assets/cba-main.webp" alt="Web & Editorial" class="card-img" loading="lazy">
                             </div>
                             <h3>Web & Editorial</h3>
                             <p>Maquetación CSS • Diseño Editorial</p>
                         </div>
                         <!-- 5. Motion & 3D -->
-                        <div class="project-card" onclick="toggleProjectDetail('multimedia')">
+                        <div class="project-card" role="button" tabindex="0"
+                            onclick="toggleProjectDetail('multimedia')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProjectDetail('multimedia')}">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/dracula-cover.webp" alt="Motion & 3D" class="card-img">
+                                <img src="assets/dracula-cover.webp" alt="Motion & 3D" class="card-img" loading="lazy">
                             </div>
                             <h3>Motion & 3D</h3>
                             <p>After Effects • Cinema 4D • Dirección de Arte</p>
                         </div>
                         <!-- 6. UX/UI Mobile (Tarantino) -->
-                        <div class="project-card" onclick="toggleProjectDetail('mobile')">
+                        <div class="project-card" role="button" tabindex="0"
+                            onclick="toggleProjectDetail('mobile')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProjectDetail('mobile')}">
                             <div class="project-image-placeholder vertical-img">
-                                <img src="assets/tarantino-main.webp" alt="UX/UI Mobile Tarantino" class="card-img">
+                                <img src="assets/tarantino-main.webp" alt="UX/UI Mobile Tarantino" class="card-img" loading="lazy">
                             </div>
                             <h3>UX/UI Mobile</h3>
                             <p>Exposición Tarantino • IFEMA</p>
@@ -131,12 +192,13 @@
                     <!-- ============ ELYSIUM ============ -->
                     <div id="detail-elysium" class="project-case-study">
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>Elysium Scapes</h3>
                             <span class="case-tags">Advanced UI • Prototyping • Component Systems • Figma</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/elysium.webp" alt="Elysium Scapes" class="card-img">
+                                <img src="assets/elysium.webp" alt="Elysium Scapes" class="card-img" loading="lazy">
                             </div>
                             <div class="case-intro-text">
                                 <p class="intro-text"><strong>El Reto:</strong> Diseñar la interfaz y la capa de micro-interacciones para una plataforma web orientada al sector del lujo (Elysium Scapes). El objetivo principal era transmitir exclusividad puramente a través del comportamiento dinámico de la web, utilizando técnicas avanzadas de prototipado.</p>
@@ -148,14 +210,14 @@
                                     <h4>1. User Flow & Dirección de Arte</h4>
                                     <p>Mapeo exhaustivo del viaje del usuario (User Journey) para una plataforma de reservas premium. Definición de una dirección de arte sofisticada (Dark Mode) con tipografía serif elegante, priorizando que la fotografía de los destinos (Santorini, Bali) guíe la experiencia de navegación.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/elysium-ui.webp" alt="User Flow y Dirección de Arte"></div>
+                                <div class="zig-zag-img"><img src="assets/elysium-ui.webp" alt="User Flow y Dirección de Arte" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
                                     <h4>2. Smart Animate & Componentes Interactivos</h4>
                                     <p>Construcción de un sistema modular de componentes en Figma utilizando variantes complejas. Configuración de transiciones de alta fidelidad mediante <i>Smart Animate</i> (curvas bezier personalizadas y efectos de muelle/spring) para previsualizar con precisión matemática las físicas e interacciones antes de pasar a desarrollo.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/elysium-figma.webp" alt="Lógica de Prototipado Avanzado"></div>
+                                <div class="zig-zag-img"><img src="assets/elysium-figma.webp" alt="Lógica de Prototipado Avanzado" loading="lazy"></div>
                             </div>
                         </div>
                         <div class="live-preview-section">
@@ -174,12 +236,13 @@
                     <!-- ============ BAKENEKO ============ -->
                     <div id="detail-bakeneko" class="project-case-study">
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>Bakeneko Bakery</h3>
                             <span class="case-tags">E-Commerce Premium • Product Strategy • Frontend (GSAP/JS) • Phywebpal</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/bakeneko.webp" alt="Bakeneko Bakery" class="card-img">
+                                <img src="assets/bakeneko.webp" alt="Bakeneko Bakery" class="card-img" loading="lazy">
                             </div>
                             <div class="case-intro-text">
                                 <p class="intro-text"><strong>El Reto:</strong> El reto era tan delicado como los propios Wagashi: diseñar una experiencia de e-commerce que no se sintiera como una compra, sino como la entrada a una ceremonia. Quería fusionar tres mundos que me fascinan; las criaturas del folclore japonés (Yokai), la repostería artesanal (Wagashi) y el ritual del maridaje con cafés y vinos de especialidad. El objetivo es crear el espacio digital de una marca de lujo silencioso, pensada para el antojo ocasional, no para la cesta diaria.</p>
@@ -191,21 +254,21 @@
                                     <h4>1. Diseño de Experiencia</h4>
                                     <p>El primer acercamiento con usuarios reveló un riesgo: la estructura clásica de tienda online empujaba al producto hacia una falsa sensación de 'compra diaria', algo que chocaba con la esencia del proyecto. La solución no fue cambiar el producto, sino el contexto. Para preservar ese aura de consumo ocasional y especial, rediseñé cada punto de contacto visual.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/bakeneko-estrategia.webp" alt="Estrategia de Negocio"></div>
+                                <div class="zig-zag-img"><img src="assets/bakeneko-estrategia.webp" alt="Estrategia de Negocio" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
                                     <h4>2. Rompiendo el E-commerce Tradicional</h4>
                                     <p>Diseñé la experiencia con enfoque <i>Mobile-First</i> y una cesta de compra asíncrona oculta en modales: el usuario nunca abandona la narrativa visual para comprar, eliminando fricciones. A nivel de sistema, la web está pensada como un ecosistema multi-idioma (ES, EN, JP). Esto va más allá de traducir textos: el logotipo muta sus variantes tipográficas según el idioma activo, manteniendo la coherencia estética en cada versión.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/bakeneko-ux.webp" alt="UX E-commerce sin fricción"></div>
+                                <div class="zig-zag-img"><img src="assets/bakeneko-ux.webp" alt="UX E-commerce sin fricción" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text">
                                     <h4>3. Ilustración y Gamificación como Hilo Narrativo</h4>
                                     <p>El factor diferencial no está solo en el código, sino en el universo visual que construí alrededor del producto. Cada Wagashi se asocia a un Yokai protector, representado mediante una ilustración original. Estas ilustraciones no son decorativas: forman parte de un sistema de cartas coleccionables físicas y digitales. El <i>sistema de fidelización</i> se cierra con un incentivo final: reunir las 6 variedades da acceso a un postre único, convirtiendo la repetición de compra en una pequeña búsqueda mitológica personal.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/bakeneko-ilustration.webp" alt="Animaciones GSAP"></div>
+                                <div class="zig-zag-img"><img src="assets/bakeneko-ilustration.webp" alt="Animaciones GSAP" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
@@ -231,12 +294,13 @@
                     <!-- ============ IDENTIDAD & ENCARGOS ============ -->
                     <div id="detail-identity" class="project-case-study">
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>Identidad & Encargos</h3>
                             <span class="case-tags">Branding • Editorial • Packaging • Client Work</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/identity-main.webp" alt="Identidad & Encargos" class="card-img">
+                                <img src="assets/identity-main.webp" alt="Identidad & Encargos" class="card-img" loading="lazy">
                             </div>
                             <div class="case-intro-text">
                                 <p class="intro-text"><strong>El Reto:</strong> Traducir las necesidades de marcas independientes y encargos personalizados en soluciones gráficas de alta calidad. Esta sección reúne tanto encargos reales de clientes como proyectos de exploración académica, demostrando la habilidad de trabajar en entornos profesionales y experimentales con la misma exigencia.</p>
@@ -256,13 +320,13 @@
                                 </div>
                                 <div class="interactive-gallery">
                                     <div class="gallery-main">
-                                        <img src="assets/craftlove-asset.webp" alt="CraftLove Store">
+                                        <img src="assets/craftlove-asset.webp" alt="CraftLove Store" loading="lazy">
                                     </div>
                                     <div class="gallery-stack">
-                                        <img src="assets/craftlove-asset1.webp" alt="Asset 1" class="stacked-card" onclick="openLightbox(this.src)">
-                                        <img src="assets/craftlove-asset2.webp" alt="Asset 2" class="stacked-card" onclick="openLightbox(this.src)">
-                                        <img src="assets/craftlove-asset3.webp" alt="Asset 3" class="stacked-card" onclick="openLightbox(this.src)">
-                                        <img src="assets/craftlove-asset4.webp" alt="Asset 4" class="stacked-card" onclick="openLightbox(this.src)">
+                                        <img src="assets/craftlove-asset1.webp" alt="Asset 1" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
+                                        <img src="assets/craftlove-asset2.webp" alt="Asset 2" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
+                                        <img src="assets/craftlove-asset3.webp" alt="Asset 3" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
+                                        <img src="assets/craftlove-asset4.webp" alt="Asset 4" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -274,23 +338,23 @@
                                 </div>
                                 <div class="interactive-gallery">
                                     <div class="gallery-main">
-                                        <img src="assets/yeli.webp" alt="Yeli Tarjeta Final">
+                                        <img src="assets/yeli.webp" alt="Yeli Tarjeta Final" loading="lazy">
                                     </div>
                                     <div class="gallery-stack">
-                                        <img src="assets/yeli-var1.webp" alt="Variación 1" class="stacked-card" onclick="openLightbox(this.src)">
-                                        <img src="assets/yeli-var2.webp" alt="Variación 2" class="stacked-card" onclick="openLightbox(this.src)">
-                                        <img src="assets/yeli-var3.webp" alt="Variación 3" class="stacked-card" onclick="openLightbox(this.src)">
+                                        <img src="assets/yeli-var1.webp" alt="Variación 1" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
+                                        <img src="assets/yeli-var2.webp" alt="Variación 2" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
+                                        <img src="assets/yeli-var3.webp" alt="Variación 3" class="stacked-card" onclick="openLightbox(this.src)" loading="lazy">
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- 3. ACuatro (encargo real, nuevo) -->
+                            <!-- 3. ACuatro -->
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text">
                                     <h4>3. ACuatro: Papelería e Impresión Gran Formato</h4>
                                     <p>Encargo real para la papelería independiente <strong>ACuatro</strong>. El proyecto abarca el diseño integral de la identidad aplicada al punto de venta: mockups de papelería corporativa (tarjetas, bolsas, señalética interior), disposición tipográfica de <strong>un cartel de gran formato</strong> y preparación de las artes finales para imprenta. Enfoque editorial minimalista que equilibra la legibilidad a gran escala con una estética cuidada y coherente con el espacio físico de la tienda.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/acuatro.webp" alt="Papelería ACuatro - Gran Formato"></div>
+                                <div class="zig-zag-img"><img src="assets/acuatro.webp" alt="Papelería ACuatro - Gran Formato" loading="lazy"></div>
                             </div>
 
                             <!-- ===== DIVISOR ===== -->
@@ -306,7 +370,7 @@
                                     <h4>4. Stephen King: Red Collection</h4>
                                     <p>Diseño de una colección de tres clásicos de Stephen King (<i>It</i>, <i>Misery</i>, <i>The Shining</i>) con una identidad visual unificada. La propuesta parte de un fondo blanco impoluto, tipografía negra y un único acento en rojo sangre. Los elementos rojos (el globo, la máquina de escribir, el laberinto) fueron diseñados para ser <strong>troquelados</strong> en la portada física, creando un efecto de profundidad y un guiño a los coleccionistas. El sistema se extendió a marcapáginas, cuadernillos y merchandising.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/stephen-king.webp" alt="Colección Stephen King"></div>
+                                <div class="zig-zag-img"><img src="assets/stephen-king.webp" alt="Colección Stephen King" loading="lazy"></div>
                             </div>
 
                             <div class="zig-zag-row reverse">
@@ -314,7 +378,7 @@
                                     <h4>5. Vidal: Packaging Sostenible</h4>
                                     <p>Diseño del packaging para la línea de chuches veganas y naturales de Vidal. El reto era comunicar <strong>sostenibilidad y origen natural</strong> sin caer en los tópicos del sector. Se optó por un sobre de papel kraft con ilustraciones botánicas lineales en tono dorado y una ventana en forma de gota que deja ver el producto. La paleta terrosa y la tipografía serif refuerzan la percepción de calidad artesanal y respeto por el medio ambiente.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/vidal-packaging.webp" alt="Packaging Vidal"></div>
+                                <div class="zig-zag-img"><img src="assets/vidal-packaging.webp" alt="Packaging Vidal" loading="lazy"></div>
                             </div>
                         </div>
                     </div>
@@ -322,6 +386,7 @@
                     <!-- ============ MOTION & 3D ============ -->
                     <div id="detail-multimedia" class="project-case-study">
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>Producción Multimedia & Motion Graphics</h3>
                             <span class="case-tags">After Effects • Cinema 4D • Edición • Dirección de Arte</span>
                         </div>
@@ -361,7 +426,7 @@
                                 </div>
                             </div>
 
-                            <!-- PDF DOSSIER (horizontal A4) -->
+                            <!-- PDF DOSSIER -->
                             <div class="pdf-dossier-section">
                                 <h4>Análisis Creativo Completo</h4>
                                 <p>Desglose técnico y narrativo del spot: teoría audiovisual, psicología del color y detalles ocultos.</p>
@@ -402,6 +467,7 @@
                     <!-- ============ SEMÁNTICA (Ensayo) ============ -->
                     <div id="detail-semantics" class="project-case-study">
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>La Semántica Cognitiva en el E-commerce</h3>
                             <span class="case-tags">Ensayo • UX Strategy • IA Generativa • Merchandising</span>
                         </div>
@@ -436,14 +502,14 @@
                     <!-- ============ WEB & EDITORIAL ============ -->
                     <div id="detail-webeditorial" class="project-case-study">
                         
-                        <!-- BLOQUE 1: DIEGÉSTICA (primero) -->
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>Diegéstica: Arquitectos de Realidades</h3>
                             <span class="case-tags">Maquetación Web • CSS Avanzado • Cargo Collective • UI/UX</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/diegestica-main.webp" alt="Diegéstica" class="card-img">
+                                <img src="assets/diegestica-main.webp" alt="Diegéstica" class="card-img" loading="lazy">
                             </div>
                             <div class="case-intro-text">
                                 <p class="intro-text"><strong>El Reto:</strong> Diseñar una plataforma analítica sobre cómo cineastas como Wes Anderson, Sofia Coppola, Denis Villeneuve y Alejandro Amenábar utilizan el espacio arquitectónico como un personaje narrativo más. El objetivo era unificar lenguajes visuales opuestos bajo un rigor espacial compartido.</p>
@@ -455,28 +521,27 @@
                                     <h4>Interacción y Ecosistema Digital</h4>
                                     <p>La <i>homepage</i> funciona como el catálogo de una exposición de prestigio, presentando tarjetas en blanco y negro que revelan la paleta cromática real de cada director mediante interacciones <i>hover</i>. Este ecosistema principal se conectó con un blog secundario desarrollado en Cargo Collective, priorizando una estética sobria y modular para gestionar exposiciones y contenido <i>behind the scenes</i>.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/diegestica-ux.webp" alt="Ecosistema Diegéstica"></div>
+                                <div class="zig-zag-img"><img src="assets/diegestica-ux.webp" alt="Ecosistema Diegéstica" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
                                     <h4>Efectos CSS y Atmósfera</h4>
                                     <p>Para construir la atmósfera de la web, se aplicaron filtros CSS avanzados. Se implementaron propiedades como <code>backdrop-filter: blur</code> para los menús de navegación translúcidos y <code>box-shadow</code> volumétricos para separar visualmente el contenido del fondo, además de inyectar una textura de grano sutil (radial gradients sobrepuestos) para evocar la película analógica de 35mm.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/diegestica-css.webp" alt="Código CSS"></div>
+                                <div class="zig-zag-img"><img src="assets/diegestica-css.webp" alt="Código CSS" loading="lazy"></div>
                             </div>
                         </div>
 
-                        <!-- SEPARADOR -->
                         <div style="width: 100%; height: 1px; background-color: #EAEAEA; margin: 6rem 0;"></div>
 
-                        <!-- BLOQUE 2: CBA MAGAZINE -->
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>CBA: Moda Sostenible sin Filtros</h3>
                             <span class="case-tags">Diseño Editorial Web • Frontend • Branding • CSS Grid</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/cba-main.webp" alt="CBA Magazine" class="card-img">
+                                <img src="assets/cba-main.webp" alt="CBA Magazine" class="card-img" loading="lazy">
                             </div>
                             <div class="case-intro-text">
                                 <p class="intro-text"><strong>El Reto:</strong> Conceptualizar y maquetar una revista digital de moda sostenible que se desmarque por completo del minimalismo orgánico y los tonos tierra habituales del sector. La propuesta visual busca conectar con un público joven y crítico, huyendo del <i>greenwashing</i> mediante una actitud más cruda y directa.</p>
@@ -488,18 +553,17 @@
                                     <h4>Sistema de Diseño y Tipografía</h4>
                                     <p>La identidad se construyó sobre un sistema de collage digital desordenado intencionadamente. Para equilibrar el peso visual, se combinó la tipografía "Rock Salt" (simulando escritura manual para elementos destacados como el <i>hover</i> de los post-its) con la limpieza técnica y rectangular de "Ubuntu Mono" para los cuerpos de texto, aportando un aire de manifiesto <i>hacker</i>.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/cba-typo.webp" alt="Tipografía CBA"></div>
+                                <div class="zig-zag-img"><img src="assets/cba-typo.webp" alt="Tipografía CBA" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
                                     <h4>Componentes Interactivos (CSS Avanzado)</h4>
                                     <p>El diseño de componentes rompe las convenciones corporativas: el pop-up de inicio de sesión y la política de cookies se maquetaron replicando la estética de un ticket de compra impreso. Adicionalmente, la sección <i>Backstage</i> incorpora marcos de televisores antiguos con efectos de distorsión visual (<i>glitch</i>) construidos con CSS puro para presentar el contenido en vídeo.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/cba-components.webp" alt="Componentes UI CBA"></div>
+                                <div class="zig-zag-img"><img src="assets/cba-components.webp" alt="Componentes UI CBA" loading="lazy"></div>
                             </div>
                         </div>
 
-                        <!-- SECCIÓN DE PREVIEWS AL FINAL -->
                         <div class="live-preview-section">
                             <h4>Navegación en vivo</h4>
                             <p>Explora ambas webs reales (si una no carga, ábrela en pestaña nueva):</p>
@@ -531,15 +595,15 @@
 
                     </div>
 
-                    <!-- ============ UX/UI MOBILE (Tarantino) ============ -->
                     <div id="detail-mobile" class="project-case-study">
                         <div class="case-header-block">
+                            <button class="back-to-projects" onclick="closeCaseStudy()">← Volver a proyectos</button>
                             <h3>Exposición Tarantino: App Interactiva</h3>
                             <span class="case-tags">UX/UI Mobile • Diseño de Interacción • IFEMA Madrid</span>
                         </div>
                         <div class="case-intro-row">
                             <div class="project-image-placeholder vertical-img case-main-img">
-                                <img src="assets/tarantino-main.webp" alt="App Exposición Tarantino" class="card-img">
+                                <img src="assets/tarantino-main.webp" alt="App Exposición Tarantino" class="card-img" loading="lazy">
                             </div>
                             <div class="case-intro-text">
                                 <p class="intro-text"><strong>El Reto:</strong> Diseñar la experiencia digital para la exposición "Tarantino: Una Experiencia Única" en IFEMA Madrid. El objetivo era que los visitantes pudieran interactuar con el contenido de la exposición de forma lúdica y participativa: encontrar los "Tarantinos" escondidos, acceder a información de las obras, comprar merch y participar en sorteos. Todo ello con una estética que evocara el universo cinematográfico del director.</p>
@@ -551,21 +615,21 @@
                                     <h4>Concepto: El Juego como Hilo Conductor</h4>
                                     <p>La app se planteó como un <strong>juego de búsqueda</strong> ("¡Encuéntrame!"). El usuario debe localizar a los personajes de Tarantino escondidos en las salas de la exposición. Cada hallazgo desbloquea pistas, curiosidades y contenido extra. Este enfoque gamificado fomenta la exploración activa y aumenta el tiempo de permanencia en la exposición.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/tarantino-juego.webp" alt="Juego de búsqueda"></div>
+                                <div class="zig-zag-img"><img src="assets/tarantino-juego.webp" alt="Juego de búsqueda" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row reverse">
                                 <div class="zig-zag-text">
                                     <h4>Sistema de Diseño "Pulp"</h4>
                                     <p>La identidad visual se construyó sobre un fondo amarillo vibrante (guiño a los carteles de <i>Pulp Fiction</i>) con tipografía negra de alto contraste y un trazo manual que simula la estética de los cómics y los pósters de serie B. Se diseñaron componentes modulares: tarjetas de personajes, mapas interactivos, entradas digitales con QR y secciones de merchandising.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/tarantino-sistema.webp" alt="Sistema de diseño"></div>
+                                <div class="zig-zag-img"><img src="assets/tarantino-sistema.webp" alt="Sistema de diseño" loading="lazy"></div>
                             </div>
                             <div class="zig-zag-row">
                                 <div class="zig-zag-text">
                                     <h4>Prototipo y Flujo de Usuario</h4>
                                     <p>Se definió un flujo claro: <strong>Registro → Mapa → Búsqueda → Recompensa</strong>. El mapa guía al usuario por las salas, y cada "Tarantino" encontrado se marca en el perfil. Al completar la colección, se desbloquea la participación en el sorteo de un día en el rodaje de la nueva película del director. La app se prototipó en Figma y se testó con usuarios para validar la jugabilidad y la claridad de la navegación.</p>
                                 </div>
-                                <div class="zig-zag-img"><img src="assets/tarantino-prototipo.webp" alt="Prototipo interactivo"></div>
+                                <div class="zig-zag-img"><img src="assets/tarantino-prototipo.webp" alt="Prototipo interactivo" loading="lazy"></div>
                             </div>
                         </div>
                     </div>
@@ -577,19 +641,31 @@
                 <p>Actualmente abierta a conversaciones profesionales interesantes. Si tienes un proyecto en mente, me encantaría conocerlo.</p>
                 
                 <div class="contact-links">
-                    <a href="mailto:claraj1653@gmail.com" class="contact-item">
-                        <span class="label">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            Email
-                        </span>
-                        <span class="value">claraj1653@gmail.com</span>
-                    </a>
+                    <div class="contact-item">
+                        <a href="mailto:claraj1653@gmail.com" class="contact-main">
+                            <span class="label">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                Email
+                            </span>
+                            <span class="value">claraj1653@gmail.com</span>
+                        </a>
+                        <button class="copy-email-btn" onclick="copyEmail(this)" aria-label="Copiar email al portapapeles">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px;">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copiar
+                        </button>
+                    </div>
                     <a href="https://linkedin.com/in/clara-jv" target="_blank" class="contact-item">
                         <span class="label">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                             LinkedIn
                         </span>
-                        <span class="value">Clara Jiménez</span>
+                        <span class="value">/in/clara-jv</span>
                     </a>
                     <a href="assets/CV_Clara.Jimenez.pdf" download class="contact-item">
                         <span class="label">
@@ -602,22 +678,6 @@
             </div>
 
         </main>
-
-        <nav class="main-menu">
-            <a class="soft-glitch-link active-btn" onclick="toggleSection('about', this)">Quién soy</a>
-            <a class="soft-glitch-link" onclick="toggleSection('works', this)">Proyectos</a>
-            <a class="soft-glitch-link" onclick="toggleSection('contact', this)">Contacto</a>
-        </nav>
-
-        <nav class="project-sub-menu">
-            <a id="sublink-identity" class="sub-link" onclick="toggleProjectDetail('identity')">Identidad</a>
-            <a id="sublink-elysium" class="sub-link" onclick="toggleProjectDetail('elysium')">Elysium</a>
-            <a id="sublink-bakeneko" class="sub-link" onclick="toggleProjectDetail('bakeneko')">Bakeneko</a>
-            <a id="sublink-webeditorial" class="sub-link" onclick="toggleProjectDetail('webeditorial')">Web & Editorial</a>
-            <a id="sublink-multimedia" class="sub-link" onclick="toggleProjectDetail('multimedia')">Motion & 3D</a>
-            <a id="sublink-mobile" class="sub-link" onclick="toggleProjectDetail('mobile')">Mobile</a>
-            <a id="sublink-semantics" class="sub-link sub-link-essay" onclick="toggleProjectDetail('semantics')">Ensayo</a>
-        </nav>
 
         <div id="image-lightbox" class="lightbox-modal" onclick="closeLightbox()">
             <img id="lightbox-img" src="" alt="Vista ampliada">
